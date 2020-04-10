@@ -56,6 +56,6 @@ public interface UserVehicleDtlsService {
 	 * @param empId
 	 * @return
 	 */
-	public Optional<VehicleDtls> getbyVehicleDtldByEmpId(String empId);
+	public Optional<VehicleDtls> getVehicleDtlsByEmpId(String empId);
 
 }

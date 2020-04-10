@@ -108,8 +108,8 @@ public class UserVehicleDtlsController {
 	 * @return
 	 */
 	@GetMapping(value= "vehicleDtls/getbyempid/{emp-id}")
-	public Optional<VehicleDtls> getbyVehicleDtldByEmpId(@PathVariable(value= "emp-id") String empId) {
+	public Optional<VehicleDtls> getVehicleDtlsByEmpId(@PathVariable(value= "emp-id") String empId) {
 		logger.info("Getting vehicleDtls info with employee-id= {}.", empId);
-		return vehicleDtlsService.getbyVehicleDtldByEmpId(empId);
+		return vehicleDtlsService.getVehicleDtlsByEmpId(empId);
 	}
 }

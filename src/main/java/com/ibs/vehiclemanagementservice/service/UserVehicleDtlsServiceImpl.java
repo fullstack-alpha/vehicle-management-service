@@ -69,7 +69,7 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 
 	//	 * Method to fetch vehicleDtls by emp_id using mongo-db repository.
 	@Override
-	public Optional<VehicleDtls> getbyVehicleDtldByEmpId(String empId) {
+	public Optional<VehicleDtls> getVehicleDtlsByEmpId(String empId) {
 		return userVehicleDtlsRepository.findByEmployeeId(empId);
 	}
 
