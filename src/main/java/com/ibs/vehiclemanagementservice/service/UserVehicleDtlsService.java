@@ -50,4 +50,12 @@ public interface UserVehicleDtlsService {
 	 * @return
 	 */
 	public Optional<Employee> getEmployeeById(String empId);
+
+	/**
+	 * Method to fetch vehicleDtls by emp id using mongo-db repository.
+	 * @param empId
+	 * @return
+	 */
+	public Optional<VehicleDtls> getbyVehicleDtldByEmpId(String empId);
+
 }

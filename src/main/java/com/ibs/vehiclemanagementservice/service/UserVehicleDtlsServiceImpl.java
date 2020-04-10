@@ -16,7 +16,7 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 
 	// The dao UserVehicleDtlsRepository repository will use the Mongodb-Repository to perform the database operations.
 	@Autowired
-    UserVehicleDtlsRepository dao;
+    UserVehicleDtlsRepository userVehicleDtlsRepository;
 
 	// The dao UserRepository repository will use the Mysql-Repository to perform the database operations.
 	@Autowired
@@ -25,37 +25,37 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 	// 	 * Implementaion Method to create new vehicleDtls in the db using mongo-db repository.
 	@Override
 	public void createVehicleDtls(VehicleDtls dtls) {
-		dao.insert(dtls);
+		userVehicleDtlsRepository.insert(dtls);
 	}
 
 	//	 * Method to fetch all vehicleDtls from the db using mongo-db repository.
 	@Override
 	public Collection<VehicleDtls> getAllVehicleDtls() {
-		return dao.findAll();
+		return userVehicleDtlsRepository.findAll();
 	}
 
 	//	 * Method to fetch vehicleDtls by id using mongo-db repository.
 	@Override
 	public Optional<VehicleDtls> findVehicleDtlsById(int id) {
-		return dao.findById(id);
+		return userVehicleDtlsRepository.findById(id);
 	}
 
 	//	 * Method to delete vehicleDtls by id using mongo-db repository.
 	@Override
 	public void deleteVehicleDtlsById(int id) {
-		dao.deleteById(id);
+		userVehicleDtlsRepository.deleteById(id);
 	}
 
 	//	 * Method to update vehicleDtls by id using mongo-db repository.
 	@Override
 	public void updateVehicleDtls(VehicleDtls dtls) {
-		dao.save(dtls);
+		userVehicleDtlsRepository.save(dtls);
 	}
 
 	//	 * Method to delete all vehicleDtls using mongo-db repository.
 	@Override
 	public void deleteAllVehicleDtls() {
-		dao.deleteAll();
+		userVehicleDtlsRepository.deleteAll();
 	}
 
 	//	 * Method to fetch Employee info by id using Mysql-db repository.
@@ -66,4 +66,11 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 		Optional<Employee> emp = Optional.of(employee);
 		return emp;
 	}
+
+	//	 * Method to fetch vehicleDtls by emp_id using mongo-db repository.
+	@Override
+	public Optional<VehicleDtls> getbyVehicleDtldByEmpId(String empId) {
+		return userVehicleDtlsRepository.findByEmployeeId(empId);
+	}
+
 }

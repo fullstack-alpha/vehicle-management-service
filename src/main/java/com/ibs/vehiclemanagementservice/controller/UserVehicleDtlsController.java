@@ -101,4 +101,15 @@ public class UserVehicleDtlsController {
 		logger.info("Getting Employee info with employee-id= {}.", empId);
 		return vehicleDtlsService.getEmployeeById(empId);
 	}
+
+	/**
+	 * Method to fetch vehicledetails info by empid.
+	 * @param empId
+	 * @return
+	 */
+	@GetMapping(value= "vehicleDtls/getbyempid/{emp-id}")
+	public Optional<VehicleDtls> getbyVehicleDtldByEmpId(@PathVariable(value= "emp-id") String empId) {
+		logger.info("Getting vehicleDtls info with employee-id= {}.", empId);
+		return vehicleDtlsService.getbyVehicleDtldByEmpId(empId);
+	}
 }

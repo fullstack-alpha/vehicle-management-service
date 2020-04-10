@@ -9,17 +9,17 @@ public class VehicleDtls {
 
 	@Id
 	private int id;
-	private String vehicletype;
-	private String employee_id;
-	private String employee_name;
+	private String vehicleType;
+	private String employeeId;
+	private String employeeName;
 	private String requestStatus;
 	private String vehicleNumber;
 
-	public VehicleDtls(int id, String vehicletype, String employee_id, String employee_name, String requestStatus, String vehicleNumber) {
+	public VehicleDtls(int id, String vehicleType, String employeeId, String employeeName, String requestStatus, String vehicleNumber) {
 		this.id = id;
-		this.vehicletype = vehicletype;
-		this.employee_id = employee_id;
-		this.employee_name = employee_name;
+		this.vehicleType = vehicleType;
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
 		this.requestStatus = requestStatus;
 		this.vehicleNumber = vehicleNumber;
 	}
@@ -32,28 +32,28 @@ public class VehicleDtls {
 		this.id = id;
 	}
 
-	public String getVehicletype() {
-		return vehicletype;
+	public String getVehicleType() {
+		return vehicleType;
 	}
 
-	public void setVehicletype(String vehicletype) {
-		this.vehicletype = vehicletype;
+	public void setVehicleType(String vehicleType) {
+		this.vehicleType = vehicleType;
 	}
 
-	public String getEmployee_id() {
-		return employee_id;
+	public String getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setEmployee_id(String employee_id) {
-		this.employee_id = employee_id;
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
 	}
 
-	public String getEmployee_name() {
-		return employee_name;
+	public String getEmployeeName() {
+		return employeeName;
 	}
 
-	public void setEmployee_name(String employee_name) {
-		this.employee_name = employee_name;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
 
 	public String getRequestStatus() {
@@ -76,9 +76,9 @@ public class VehicleDtls {
 	public String toString() {
 		return "VehicleDtls{" +
 				"id=" + id +
-				", vehicletype='" + vehicletype + '\'' +
-				", employee_id='" + employee_id + '\'' +
-				", employee_name='" + employee_name + '\'' +
+				", vehicleType='" + vehicleType + '\'' +
+				", employeeId='" + employeeId + '\'' +
+				", employeeName='" + employeeName + '\'' +
 				", requestStatus='" + requestStatus + '\'' +
 				", vehicleNumber='" + vehicleNumber + '\'' +
 				'}';
