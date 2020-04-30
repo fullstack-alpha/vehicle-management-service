@@ -49,7 +49,14 @@ public interface UserVehicleDtlsService {
 	 * @param empId
 	 * @return
 	 */
-	public Optional<Employee> getEmployeeById(String empId);
+	public Optional<Employee> getEmployeeByEmpId(String empId);
+
+	/**
+	 * Method to fetch employee details to auto populate by id using Mysql repository.
+	 * @param id
+	 * @return
+	 */
+	public Optional<Employee> getEmployeeById(int id);
 
 	/**
 	 * Method to fetch vehicleDtls by emp id using mongo-db repository.
