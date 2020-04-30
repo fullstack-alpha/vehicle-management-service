@@ -16,7 +16,7 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 
 	// The dao UserVehicleDtlsRepository repository will use the Mongodb-Repository to perform the database operations.
 	@Autowired
-    UserVehicleDtlsRepository userVehicleDtlsRepository;
+	UserVehicleDtlsRepository userVehicleDtlsRepository;
 
 	// The dao UserRepository repository will use the Mysql-Repository to perform the database operations.
 	@Autowired
@@ -58,11 +58,20 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 		userVehicleDtlsRepository.deleteAll();
 	}
 
-	//	 * Method to fetch Employee info by id using Mysql-db repository.
+	//	 * Method to fetch Employee info by emp id using Mysql-db repository.
 	@Override
-	public Optional<Employee> getEmployeeById(String empId) {
+	public Optional<Employee> getEmployeeByEmpId(String empId) {
 		Employee employee = userRepository.findByEmployeeId(empId)
 				.orElseThrow(() -> new UsernameNotFoundException("Employee details not found with employee_id : " + empId));
+		Optional<Employee> emp = Optional.of(employee);
+		return emp;
+	}
+
+	//	 * Method to fetch Employee info by id using Mysql-db repository.
+	@Override
+	public Optional<Employee> getEmployeeById(int id) {
+		Employee employee = userRepository.findById(id)
+				.orElseThrow(() -> new UsernameNotFoundException("Employee details not found with id : " + id));
 		Optional<Employee> emp = Optional.of(employee);
 		return emp;
 	}

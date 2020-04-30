@@ -92,14 +92,25 @@ public class UserVehicleDtlsController {
 	}
 
 	/**
-	 * Method to fetch employee info by id to show employee details.
+	 * Method to fetch employee info by emp id to show employee details.
 	 * @param empId
 	 * @return
 	 */
-	@GetMapping(value= "employee/getbyid/{employee-id}")
-	public Optional<Employee> getEmployeeById(@PathVariable(value= "employee-id") String empId) {
+	@GetMapping(value= "employee/getbyempid/{empId}")
+	public Optional<Employee> getbyempid(@PathVariable(value= "empId") String empId) {
 		logger.info("Getting Employee info with employee-id= {}.", empId);
-		return vehicleDtlsService.getEmployeeById(empId);
+		return vehicleDtlsService.getEmployeeByEmpId(empId);
+	}
+
+	/**
+	 * Method to fetch employee info by id to show employee details.
+	 * @param id
+	 * @return
+	 */
+	@GetMapping(value= "employee/getbyid/{id}")
+	public Optional<Employee> getEmployeeById(@PathVariable(value= "id") int id) {
+		logger.info("Getting Employee info with id= {}.", id);
+		return vehicleDtlsService.getEmployeeById(id);
 	}
 
 	/**
