@@ -5,6 +5,7 @@ import com.ibs.vehiclemanagementservice.model.VehicleDtls;
 import com.ibs.vehiclemanagementservice.repository.UserRepository;
 import com.ibs.vehiclemanagementservice.repository.UserVehicleDtlsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,10 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 
 	// The dao UserVehicleDtlsRepository repository will use the Mongodb-Repository to perform the database operations.
 	@Autowired
-	UserVehicleDtlsRepository userVehicleDtlsRepository;
+	private UserVehicleDtlsRepository userVehicleDtlsRepository;
+
+	@Autowired
+	private MongoTemplate mongoTemplate;
 
 	// The dao UserRepository repository will use the Mysql-Repository to perform the database operations.
 	@Autowired
@@ -49,7 +53,10 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 	//	 * Method to update vehicleDtls by id using mongo-db repository.
 	@Override
 	public void updateVehicleDtls(VehicleDtls dtls) {
-		userVehicleDtlsRepository.save(dtls);
+
+			mongoTemplate.save(dtls);
+			//userVehicleDtlsRepository.save(dtls);
+
 	}
 
 	//	 * Method to delete all vehicleDtls using mongo-db repository.

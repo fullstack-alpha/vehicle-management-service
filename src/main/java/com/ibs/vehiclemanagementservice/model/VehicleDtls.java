@@ -1,5 +1,6 @@
 package com.ibs.vehiclemanagementservice.model;
 
+import java.util.Objects;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,13 +16,22 @@ public class VehicleDtls {
 	private String requestStatus;
 	private String vehicleNumber;
 
-	public VehicleDtls(int id, String vehicleType, String employeeId, String employeeName, String requestStatus, String vehicleNumber) {
+	public VehicleDtls(
+			int id,
+			String vehicleType,
+			String employeeId,
+			String employeeName,
+			String requestStatus,
+			String vehicleNumber) {
 		this.id = id;
 		this.vehicleType = vehicleType;
 		this.employeeId = employeeId;
 		this.employeeName = employeeName;
 		this.requestStatus = requestStatus;
 		this.vehicleNumber = vehicleNumber;
+	}
+
+	public VehicleDtls() {
 	}
 
 	public int getId() {
@@ -84,3 +94,4 @@ public class VehicleDtls {
 				'}';
 	}
 }
+
