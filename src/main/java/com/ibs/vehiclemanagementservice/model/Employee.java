@@ -14,6 +14,7 @@ public class Employee {
     private String designation;
     private String employeeId;
     private String password;
+    private String jobLevel;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     private UserRole role;
@@ -63,5 +64,13 @@ public class Employee {
 
     public void setRole(UserRole role) {
         this.role = role;
+    }
+
+    public String getJobLevel() {
+        return jobLevel;
+    }
+
+    public void setJobLevel(String jobLevel) {
+        this.jobLevel = jobLevel;
     }
 }
