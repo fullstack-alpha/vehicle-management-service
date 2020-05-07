@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../SiteCx/SiteCx.iml" filepath="$PROJECT_DIR$/../SiteCx/SiteCx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../vehicle-management-UI/vehicle-management-UI.iml" filepath="$PROJECT_DIR$/../vehicle-management-UI/vehicle-management-UI.iml" />
       <module fileurl="file://$PROJECT_DIR$/vehicle-management-service.iml" filepath="$PROJECT_DIR$/vehicle-management-service.iml" />
     </modules>
   </component>
