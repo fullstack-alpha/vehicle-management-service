@@ -54,6 +54,7 @@ public class EmailService {
         mimeMessageHelper.setSubject(subject);
         mimeMessageHelper.setTo(to);
 
+
         final String htmlContent = this.templateEngine.process("vehicle-pass-approved.html", ctx);
         mimeMessageHelper.setText(htmlContent, true);
 

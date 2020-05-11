@@ -5,6 +5,9 @@ import com.ibs.vehiclemanagementservice.model.VehicleDtls;
 import com.ibs.vehiclemanagementservice.repository.UserRepository;
 import com.ibs.vehiclemanagementservice.repository.UserVehicleDtlsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -36,6 +39,13 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 	@Override
 	public Collection<VehicleDtls> getAllVehicleDtls() {
 		return userVehicleDtlsRepository.findAll();
+	}
+
+	@Override
+	public Page<VehicleDtls> getAllVehicleDtlsWithPagination(Integer page, Integer size) {
+
+		Pageable pageable= PageRequest.of(page,size);
+		return userVehicleDtlsRepository.findAll(pageable);
 	}
 
 	//	 * Method to fetch vehicleDtls by id using mongo-db repository.
@@ -88,5 +98,7 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 	public Optional<VehicleDtls> getVehicleDtlsByEmpId(String empId) {
 		return userVehicleDtlsRepository.findByEmployeeId(empId);
 	}
+
+
 
 }

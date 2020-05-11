@@ -5,6 +5,7 @@ import com.ibs.vehiclemanagementservice.model.VehicleDtls;
 
 import java.util.Collection;
 import java.util.Optional;
+import org.springframework.data.domain.Page;
 
 public interface UserVehicleDtlsService {
 
@@ -19,6 +20,10 @@ public interface UserVehicleDtlsService {
 	 * @return
 	 */
 	public Collection<VehicleDtls> getAllVehicleDtls();
+
+	Page<VehicleDtls> getAllVehicleDtlsWithPagination(
+			Integer page,
+			Integer size);
 
 	/**
 	 * Method to fetch vehicleDtls by id using mongo-db repository.
