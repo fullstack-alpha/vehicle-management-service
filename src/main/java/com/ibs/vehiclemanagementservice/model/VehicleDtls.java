@@ -15,23 +15,16 @@ public class VehicleDtls {
 	private String employeeName;
 	private String requestStatus;
 	private String vehicleNumber;
+	private String emailId;
 
-	public VehicleDtls(
-			int id,
-			String vehicleType,
-			String employeeId,
-			String employeeName,
-			String requestStatus,
-			String vehicleNumber) {
+	public VehicleDtls(int id, String vehicleType, String employeeId, String employeeName, String requestStatus, String vehicleNumber, String emailId) {
 		this.id = id;
 		this.vehicleType = vehicleType;
 		this.employeeId = employeeId;
 		this.employeeName = employeeName;
 		this.requestStatus = requestStatus;
 		this.vehicleNumber = vehicleNumber;
-	}
-
-	public VehicleDtls() {
+		this.emailId = emailId;
 	}
 
 	public int getId() {
@@ -82,8 +75,16 @@ public class VehicleDtls {
 		this.vehicleNumber = vehicleNumber;
 	}
 
-	@Override
-	public String toString() {
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	@java.lang.Override
+	public java.lang.String toString() {
 		return "VehicleDtls{" +
 				"id=" + id +
 				", vehicleType='" + vehicleType + '\'' +
@@ -91,6 +92,7 @@ public class VehicleDtls {
 				", employeeName='" + employeeName + '\'' +
 				", requestStatus='" + requestStatus + '\'' +
 				", vehicleNumber='" + vehicleNumber + '\'' +
+				", emailId='" + emailId + '\'' +
 				'}';
 	}
 }
