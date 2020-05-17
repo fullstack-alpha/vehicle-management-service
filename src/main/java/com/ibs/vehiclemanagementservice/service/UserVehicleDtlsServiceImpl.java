@@ -18,9 +18,14 @@ import java.util.Optional;
 @Service
 public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 
+	private static final String INTIAL_STATUS = "Pending";
+
 	// The dao UserVehicleDtlsRepository repository will use the Mongodb-Repository to perform the database operations.
 	@Autowired
 	private UserVehicleDtlsRepository userVehicleDtlsRepository;
+
+	@Autowired
+	private NextSequenceService sequenceService;
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
@@ -32,6 +37,8 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 	// 	 * Implementaion Method to create new vehicleDtls in the db using mongo-db repository.
 	@Override
 	public void createVehicleDtls(VehicleDtls dtls) {
+		dtls.setId(sequenceService.getNextSequence("customSequences"));
+		dtls.setRequestStatus(INTIAL_STATUS);
 		userVehicleDtlsRepository.insert(dtls);
 	}
 
