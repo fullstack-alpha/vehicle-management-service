@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -102,8 +103,9 @@ public class UserVehicleDtlsServiceImpl implements UserVehicleDtlsService {
 
 	//	 * Method to fetch vehicleDtls by emp_id using mongo-db repository.
 	@Override
-	public Optional<VehicleDtls> getVehicleDtlsByEmpId(String empId) {
-		return userVehicleDtlsRepository.findByEmployeeId(empId);
+	public List<VehicleDtls> getVehicleDtlsByEmpId(String empId) {
+		List<VehicleDtls> vehicleDtls= userVehicleDtlsRepository.findByEmployeeId(empId);
+		return vehicleDtls;
 	}
 
 

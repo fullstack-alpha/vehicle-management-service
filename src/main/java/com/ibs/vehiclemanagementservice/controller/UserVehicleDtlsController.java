@@ -5,6 +5,7 @@ import com.ibs.vehiclemanagementservice.model.Employee;
 import com.ibs.vehiclemanagementservice.model.VehicleDtls;
 import com.ibs.vehiclemanagementservice.service.UserVehicleDtlsService;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -142,7 +143,7 @@ public class UserVehicleDtlsController {
      * @return
      */
     @GetMapping(value = "vehicleDtls/getbyempid/{emp-id}")
-    public Optional<VehicleDtls> getVehicleDtlsByEmpId(@PathVariable(value = "emp-id") String empId) {
+    public List<VehicleDtls> getVehicleDtlsByEmpId(@PathVariable(value = "emp-id") String empId) {
         logger.info("Getting vehicleDtls info with employee-id= {}.", empId);
         return vehicleDtlsService.getVehicleDtlsByEmpId(empId);
     }
