@@ -9,9 +9,12 @@ import java.util.Date;
 public class ParkingViolation {
     @Id
     private Integer violationId;
+    private String vehicleNo;
     private String employeeId;
-    private String remarks;
+    private String employeeName;
     private Date dateOfOffence;
+    private String remarks;
+
 
     public Integer getViolationId() {
         return violationId;
@@ -45,10 +48,29 @@ public class ParkingViolation {
         this.dateOfOffence = dateOfOffence;
     }
 
-    public ParkingViolation(Integer violationId, String employeeId, String remarks, Date dateOfOffence) {
+    public String getVehicleNo() {
+        return vehicleNo;
+    }
+
+    public void setVehicleNo(String vehicleNo) {
+        this.vehicleNo = vehicleNo;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public ParkingViolation(Integer violationId, String vehicleNo, String employeeId, String employeeName, Date dateOfOffence, String remarks) {
         this.violationId = violationId;
+        this.vehicleNo =  vehicleNo;
         this.employeeId = employeeId;
-        this.remarks = remarks;
+        this.employeeName = employeeName;
         this.dateOfOffence = dateOfOffence;
+        this.remarks = remarks;
+
     }
 }

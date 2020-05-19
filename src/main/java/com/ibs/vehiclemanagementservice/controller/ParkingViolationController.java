@@ -17,7 +17,7 @@ import java.util.Optional;
 public class ParkingViolationController {
 
     @Autowired
-   ParkingViolationDtlsService parkingViolationDtlsService;
+    ParkingViolationDtlsService parkingViolationDtlsService;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -26,7 +26,7 @@ public class ParkingViolationController {
      * @param dtls
      * @return
      */
-    @PostMapping(value= "parkingViolation/create")
+    @PostMapping(value= "create")
     public String create(@RequestBody ParkingViolation dtls) {
         logger.info("Saving ParkingViolation.");
         parkingViolationDtlsService.createParkingViolation(dtls);
@@ -37,7 +37,7 @@ public class ParkingViolationController {
      * Method to fetch all parkingViolation from the db.
      * @return
      */
-    @GetMapping(value= "parkingViolation/getall")
+    @GetMapping(value= "getall")
     public Collection<ParkingViolation> getAll() {
         logger.info("Getting all ParkingViolation.");
         return parkingViolationDtlsService.getAllParkingViolation();
@@ -48,7 +48,7 @@ public class ParkingViolationController {
      * @param id
      * @return
      */
-    @GetMapping(value= "parkingViolation/getbyid/{parkingViolation-id}")
+    @GetMapping(value= "getbyid/{parkingViolation-id}")
     public Optional<ParkingViolation> getById(@PathVariable(value= "parkingViolation-id") int id) {
         logger.info("Getting ParkingViolation with parkingViolation-id= {}.", id);
         return parkingViolationDtlsService.findParkingViolationById(id);
@@ -60,7 +60,7 @@ public class ParkingViolationController {
      * @param dtls
      * @return
      */
-    @PutMapping(value= "parkingViolation/update/{parkingViolation-id}")
+    @PutMapping(value= "update/{parkingViolation-id}")
     public String update(@PathVariable(value= "parkingViolation-id") int id, @RequestBody ParkingViolation dtls) {
         logger.info("Updating parkingViolation with parkingViolation-id= {}.", id);
         dtls.setViolationId(id);
@@ -73,7 +73,7 @@ public class ParkingViolationController {
      * @param id
      * @return
      */
-    @DeleteMapping(value= "parkingViolation/delete/{parkingViolation-id}")
+    @DeleteMapping(value= "delete/{parkingViolation-id}")
     public String delete(@PathVariable(value= "parkingViolation-id") int id) {
         logger.info("Deleting parkingViolation with parkingViolation-id= {}.", id);
         parkingViolationDtlsService.deleteParkingViolationById(id);
@@ -84,7 +84,7 @@ public class ParkingViolationController {
      * Method to delete all parkingViolation from the db.
      * @return
      */
-    @DeleteMapping(value= "parkingViolation/deleteall")
+    @DeleteMapping(value= "deleteall")
     public String deleteAll() {
         logger.info("Deleting all ParkingViolation.");
         parkingViolationDtlsService.deleteAllParkingViolation();
@@ -107,7 +107,7 @@ public class ParkingViolationController {
      * @param empId
      * @return
      */
-    @GetMapping(value= "parkingViolation/getbyempid/{emp-id}")
+    @GetMapping(value= "getbyempid/{emp-id}")
     public Optional<ParkingViolation> getParkingViolationByEmpId(@PathVariable(value= "emp-id") String empId) {
         logger.info("Getting parkingViolation info with employee-id= {}.", empId);
         return parkingViolationDtlsService.getParkingViolationByEmpId(empId);
