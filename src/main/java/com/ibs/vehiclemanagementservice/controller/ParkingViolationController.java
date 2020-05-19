@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin
@@ -108,7 +109,7 @@ public class ParkingViolationController {
      * @return
      */
     @GetMapping(value= "getbyempid/{emp-id}")
-    public Optional<ParkingViolation> getParkingViolationByEmpId(@PathVariable(value= "emp-id") String empId) {
+    public List<ParkingViolation> getParkingViolationByEmpId(@PathVariable(value= "emp-id") String empId) {
         logger.info("Getting parkingViolation info with employee-id= {}.", empId);
         return parkingViolationDtlsService.getParkingViolationByEmpId(empId);
     }

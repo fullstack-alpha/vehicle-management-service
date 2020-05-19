@@ -4,6 +4,7 @@ import com.ibs.vehiclemanagementservice.model.Employee;
 import com.ibs.vehiclemanagementservice.model.ParkingViolation;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 public interface ParkingViolationDtlsService {
@@ -56,6 +57,6 @@ public interface ParkingViolationDtlsService {
      * @param empId
      * @return
      */
-    public Optional<ParkingViolation> getParkingViolationByEmpId(String empId);
+    public List<ParkingViolation> getParkingViolationByEmpId(String empId);
 
 }

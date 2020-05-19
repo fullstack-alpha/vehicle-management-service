@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -69,8 +70,9 @@ public class ParkingViolationDtlsServiceImpl implements ParkingViolationDtlsServ
 
     //	 * Method to fetch parkingViolation by emp_id using mongo-db repository.
     @Override
-    public Optional<ParkingViolation> getParkingViolationByEmpId(String empId) {
-        return parkingViolationDtlsRepository.findByEmployeeId(empId);
+    public List<ParkingViolation> getParkingViolationByEmpId(String empId) {
+        List<ParkingViolation> parkingViolations = parkingViolationDtlsRepository.findByEmployeeId(empId);
+        return parkingViolations;
     }
 
 }
