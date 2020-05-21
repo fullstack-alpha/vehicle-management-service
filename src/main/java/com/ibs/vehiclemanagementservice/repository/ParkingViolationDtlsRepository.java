@@ -11,5 +11,6 @@ import java.util.List;
 public interface ParkingViolationDtlsRepository extends MongoRepository<ParkingViolation, Integer> {
 
     List<ParkingViolation> findByEmployeeId(String empId);
+    void deleteByViolationId(int id);
 
 }
