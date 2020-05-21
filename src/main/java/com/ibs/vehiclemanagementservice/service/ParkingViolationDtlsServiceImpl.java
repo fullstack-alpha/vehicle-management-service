@@ -44,7 +44,7 @@ public class ParkingViolationDtlsServiceImpl implements ParkingViolationDtlsServ
     //	 * Method to delete parkingViolation by id using mongo-db repository.
     @Override
     public void deleteParkingViolationById(int id) {
-        parkingViolationDtlsRepository.deleteById(id);
+        parkingViolationDtlsRepository.deleteByViolationId(id);
     }
 
     //	 * Method to update parkingViolation by id using mongo-db repository.
