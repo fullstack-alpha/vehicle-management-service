@@ -2,8 +2,8 @@ package com.ibs.vehiclemanagementservice.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Document(collection= "parkingViolationDtls")
 public class ParkingViolation {
@@ -12,7 +12,7 @@ public class ParkingViolation {
     private String vehicleNo;
     private String employeeId;
     private String employeeName;
-    private Date dateOfOffence;
+    private String dateOfOffence;
     private String remarks;
 
 
@@ -40,11 +40,11 @@ public class ParkingViolation {
         this.remarks = remarks;
     }
 
-    public Date getDateOfOffence() {
+    public String getDateOfOffence() {
         return dateOfOffence;
     }
 
-    public void setDateOfOffence(Date dateOfOffence) {
+    public void setDateOfOffence(String dateOfOffence) {
         this.dateOfOffence = dateOfOffence;
     }
 
@@ -64,7 +64,7 @@ public class ParkingViolation {
         this.employeeName = employeeName;
     }
 
-    public ParkingViolation(Integer violationId, String vehicleNo, String employeeId, String employeeName, Date dateOfOffence, String remarks) {
+    public ParkingViolation(Integer violationId, String vehicleNo, String employeeId, String employeeName, String dateOfOffence, String remarks) {
         this.violationId = violationId;
         this.vehicleNo =  vehicleNo;
         this.employeeId = employeeId;
