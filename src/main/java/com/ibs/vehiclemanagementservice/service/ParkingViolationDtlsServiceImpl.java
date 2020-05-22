@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class ParkingViolationDtlsServiceImpl implements ParkingViolationDtlsService {
@@ -26,6 +27,8 @@ public class ParkingViolationDtlsServiceImpl implements ParkingViolationDtlsServ
     // 	 * Implementaion Method to create new parkingViolation in the db using mongo-db repository.
     @Override
     public void createParkingViolation(ParkingViolation dtls) {
+        Random random = new Random();
+        dtls.setViolationId(random.nextInt());
         parkingViolationDtlsRepository.insert(dtls);
     }
 
