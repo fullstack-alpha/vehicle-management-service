@@ -1,6 +1,5 @@
 package com.ibs.vehiclemanagementservice.controller;
 
-import com.ibs.vehiclemanagementservice.model.Employee;
 import com.ibs.vehiclemanagementservice.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
