@@ -11,4 +11,5 @@ import java.util.Optional;
 @Repository
 public interface ParkingSlotRepo extends CrudRepository<ParkingZone, String> {
     Optional<ParkingZone> findByZoneID(String zoneId);
+    List<ParkingZone> findAll();
 }

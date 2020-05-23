@@ -34,4 +34,14 @@ public class ParkingSlotController {
         ParkingZone parkingZone = parkingSlotService.reserve(confirmBooking);
         return ResponseEntity.ok(parkingZone);
     }
+
+    @GetMapping("/user/reserveFeasibility")
+    public ResponseEntity reserveFeasibility(){
+        return ResponseEntity.ok(parkingSlotService.reserveFeasibility());
+    }
+
+    @GetMapping("/admin/flushParkingSlots")
+    public ResponseEntity flushParkingSlots(){
+        return ResponseEntity.ok(parkingSlotService.flushParkingSlots());
+    }
 }
