@@ -36,7 +36,7 @@ public class AdminService {
         vehicleDtlsService.updateVehicleDtls(vehicleDtls);
         logger.info("Sending mail to {} ",dtls.getEmployeeId());
         try {
-            emailService.sendMessageUsingThymeleafTemplate("ajithtalias@hotmail.com", "test sub");
+            emailService.sendMessageUsingThymeleafTemplate(vehicleDtls.getEmailId(), dtls.getRequestStatus(),vehicleDtls.getEmployeeName());
         }catch (MessagingException e){
             logger.error(e.getMessage());
         }

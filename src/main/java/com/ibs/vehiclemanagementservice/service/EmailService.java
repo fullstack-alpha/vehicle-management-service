@@ -43,19 +43,25 @@ public class EmailService {
     @Async
     public void sendMessageUsingThymeleafTemplate(
             String to,
-            String subject) throws MessagingException {
+            String status,String name) throws MessagingException {
 
         final Context ctx = new Context(Locale.US);
-        ctx.setVariable("name", "Ajith");
+        ctx.setVariable("name", name);
 
         final MimeMessage mimeMessage = this.emailSender.createMimeMessage();
         final MimeMessageHelper mimeMessageHelper =
                 new MimeMessageHelper(mimeMessage, true, "UTF-8");
-        mimeMessageHelper.setSubject(subject);
         mimeMessageHelper.setTo(to);
+        String htmlContent=null;
+        if(status.equalsIgnoreCase("Approved")){
+            mimeMessageHelper.setSubject("Vehicle Pass Request Approved");
+            htmlContent = this.templateEngine.process("vehicle-pass-approved.html", ctx);
+        }else{
+            mimeMessageHelper.setSubject("Vehicle Pass Request Approved");
+            htmlContent = this.templateEngine.process("vehicle-pass-rejected.html", ctx);
+        }
 
 
-        final String htmlContent = this.templateEngine.process("vehicle-pass-approved.html", ctx);
         mimeMessageHelper.setText(htmlContent, true);
 
         emailSender.send(mimeMessage);
