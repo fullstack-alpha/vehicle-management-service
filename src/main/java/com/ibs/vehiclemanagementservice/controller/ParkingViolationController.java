@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value= "/admin")
+@RequestMapping(value= "/parkingViolation")
 public class ParkingViolationController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class ParkingViolationController {
      * @param dtls
      * @return
      */
-    @PostMapping(value= "parkingViolation/create")
+    @PostMapping(value= "create")
     public Integer create(@RequestBody ParkingViolation dtls) {
         logger.info("Saving ParkingViolation.");
         parkingViolationDtlsService.createParkingViolation(dtls);
